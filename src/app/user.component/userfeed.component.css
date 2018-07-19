@@ -1,0 +1,30 @@
+.profile-feed{
+  margin: 0%;
+  margin-top: 10px;
+  margin-bottom: 20px; 
+  padding: 0%;
+  width: 100%;
+}
+h1,h2{
+  height: 40px;
+  margin: 0px;
+}
+h3,h4,h5{
+  height: 30px;
+  margin: 0px;
+}
+.profile-pic{
+  height: 100px;
+  width: 100px;
+  margin-right:20px;
+  float: left;
+}
+.profile-header{
+  /* margin-left:20px;
+  margin-top:10px;
+  margin-bottom:10px; */
+}
+.rating-icon{
+  float:left;
+  margin-right:5px;
+}
