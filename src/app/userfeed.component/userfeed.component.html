@@ -1,35 +1,34 @@
-<div class="container complete-feed">
-  <ng-container *ngFor="let user of users" class="profile-feed">
-    <div class="profile-row row">
-      <div class="profile-header row">
-        <div class="two columns">
-          <img class="profile-pic" src="{{ user.profilePictureLink }}">
-        </div>
-        <div class="ten columns">
-          <div class="row">
-            <h2 class="profile-name"> {{user.name}} </h2>
-            <button mat-button [matMenuTriggerFor]="menu" style="float:right;">View</button>
-            <mat-menu #menu="matMenu">
-              <button mat-menu-item>Item 1</button>
-              <button mat-menu-item>Item 2</button>
-            </mat-menu>
-          </div>
-          <div class="row">
-            <h3> {{user.years}} </h3>
-          </div>
-          <div class="row">
-            <div *ngFor="let i of [1,2,3,4,5]">
-              <fa-icon *ngIf="i<=user.rating" [icon]="ratingStar" class="rating-icon"></fa-icon>
-            </div>
-          </div>
-        </div>
-        <!-- <h3> {{user.rating}} </h3> -->
-      </div>
-      <div class="profile-body row">
-        <div class="row portfolio-images-container">
-          <img *ngFor="let userImage of user.portfolioImagesLinks" class="portfolio-image" src="{{userImage}}">
-        </div>
-      </div>
-    </div>
-  </ng-container>
+<div class="complete-feed">
+  <mat-card *ngFor="let user of users" class="profile-feed">
+    <mat-card-header>
+      <img mat-card-avatar (contextmenu) = "openContextMenu($event)" src="{{ user.profilePictureLink }}">
+      <mat-card-title>{{user.name}}</mat-card-title>
+      <mat-card-subtitle>{{user.years}}</mat-card-subtitle>
+      <button mat-button class="view-profile-button">View</button>
+      <button mat-icon-button>
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>dialpad</mat-icon>
+          <span>Redial</span>
+        </button>
+        <button mat-menu-item disabled>
+          <mat-icon>voicemail</mat-icon>
+          <span>Check voicemail</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>notifications_off</mat-icon>
+          <span>Disable alerts</span>
+        </button>
+      </mat-menu>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-grid-list cols="5" rowHeight="100px">
+        <mat-grid-tile *ngFor="let userImage of user.portfolioImagesLinks" [colspan]="1" [rowspan]="1" [style.background]="red">
+          <img src="{{userImage}}" alt="Photo of a Shiba Inu">
+        </mat-grid-tile>
+      </mat-grid-list>
+    </mat-card-content>
+  </mat-card>
 </div>

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { MatMenuTrigger } from '@angular/material';
 
 
 class User{
@@ -26,6 +27,11 @@ class User{
   styleUrls: ['./userfeed.component.scss']
 }) 
 export class UserFeedComponent {
+  @ViewChild(MatMenuTrigger) contextMenus: MatMenuTrigger;
+  closeContextMenu(event){
+    event.preventDefault();
+    this.contextMenus.openMenu();
+  }
   users: User[]= [new User("Muhab","Muhab",15,2,"https://placekitten.com/400/400",["https://placekitten.com/400/400","https://placekitten.com/400/400","https://placekitten.com/400/400","https://placekitten.com/400/400","https://placekitten.com/400/400"]),
                   new User("Ehab","Ehab",4,4,"https://placekitten.com/100/400",["https://placekitten.com/400/400","https://placekitten.com/400/400","https://placekitten.com/400/400","https://placekitten.com/400/400","https://placekitten.com/400/400"]),
                   new User("Ehab","Yaser",125,4,"https://placekitten.com/300/400",["https://placekitten.com/400/400","https://placekitten.com/400/400","https://placekitten.com/400/400","https://placekitten.com/400/400","https://placekitten.com/400/400"]),
