@@ -1,0 +1,35 @@
+<div class="container complete-feed">
+  <ng-container *ngFor="let user of users" class="profile-feed">
+    <div class="profile-row row">
+      <div class="profile-header row">
+        <div class="two columns">
+          <img class="profile-pic" src="{{ user.profilePictureLink }}">
+        </div>
+        <div class="ten columns">
+          <div class="row">
+            <h2 class="profile-name"> {{user.name}} </h2>
+            <button mat-button [matMenuTriggerFor]="menu" style="float:right;">View</button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item>Item 1</button>
+              <button mat-menu-item>Item 2</button>
+            </mat-menu>
+          </div>
+          <div class="row">
+            <h3> {{user.years}} </h3>
+          </div>
+          <div class="row">
+            <div *ngFor="let i of [1,2,3,4,5]">
+              <fa-icon *ngIf="i<=user.rating" [icon]="ratingStar" class="rating-icon"></fa-icon>
+            </div>
+          </div>
+        </div>
+        <!-- <h3> {{user.rating}} </h3> -->
+      </div>
+      <div class="profile-body row">
+        <div class="row portfolio-images-container">
+          <img *ngFor="let userImage of user.portfolioImagesLinks" class="portfolio-image" src="{{userImage}}">
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>

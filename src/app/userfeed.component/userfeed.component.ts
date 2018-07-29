@@ -21,9 +21,9 @@ class User{
 }
 
 @Component({
-  selector: 'users-feed',
+  selector: 'user-feed',
   templateUrl: './userfeed.component.html',
-  styleUrls: ['./userfeed.component.css']
+  styleUrls: ['./userfeed.component.scss']
 }) 
 export class UserFeedComponent {
   users: User[]= [new User("Muhab","Muhab",15,2,"https://placekitten.com/400/400",["https://placekitten.com/400/400","https://placekitten.com/400/400","https://placekitten.com/400/400","https://placekitten.com/400/400","https://placekitten.com/400/400"]),
