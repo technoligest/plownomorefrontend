@@ -10,7 +10,7 @@ import { Router, NavigationExtras } from '@angular/router';
   styleUrls: ['./customer-list.component.scss']
 })
 export class CustomerListComponent implements OnInit {
-  private customers: ICustomer[] = new Array<ICustomer>();
+  public customers: ICustomer[] = new Array<ICustomer>();
 
   constructor(private router: Router, private httpClient: HttpClient) { }
 
