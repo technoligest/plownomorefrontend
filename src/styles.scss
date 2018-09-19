@@ -5,3 +5,13 @@
 html,body{
   margin: 0px;
 }
+.header {
+  width: 100%;
+  display: flex;
+  text-align: center;
+  margin-top: 20px;
+  .title-text {
+    margin: auto;
+    width: 100vw;
+  }
+}

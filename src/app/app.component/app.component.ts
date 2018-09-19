@@ -8,7 +8,7 @@ export interface Tile {
 }
 
 @Component({
-  selector: 'test-component',
+  selector: 'app-test-component',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
